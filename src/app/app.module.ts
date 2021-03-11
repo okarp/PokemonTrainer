@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';  
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AppheaderComponent } from './appheader/appheader.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AppheaderComponent } from './appheader/appheader.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatPaginatorModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

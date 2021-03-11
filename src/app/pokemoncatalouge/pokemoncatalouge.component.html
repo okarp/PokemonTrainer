@@ -1,5 +1,16 @@
 <div class="loading" *ngIf="loading">
     <mat-spinner></mat-spinner></div>
+    
+<div class="paginator">
+    <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageSize]="pageSize"
+    [showFirstLastButtons]="showFirstLastButtons"
+    [pageSizeOptions]="pageSizeOptions"
+    [pageIndex]="pageIndex">
+    </mat-paginator>
+</div>
 
 <div class="maingrid" *ngIf="!loading">
        

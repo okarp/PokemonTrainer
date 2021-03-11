@@ -11,11 +11,12 @@ import { PokemonCatalogue } from 'src/interfaces';
 export class PokemonapifetcherService {  
   _pokemons:Observable<any> = new Observable;
   private allPokemons: string = "https://pokeapi.co/api/v2/pokemon?limit="
+  private offSetString: string = "&offset="
  
 
-  public getAllPokemons(limit: number): Observable<PokemonCatalogue>{     
+  public getAllPokemons(limit: number, offset: number): Observable<PokemonCatalogue>{     
     try{
-      return this.HTTP.get<PokemonCatalogue>(this.allPokemons + limit);   
+      return this.HTTP.get<PokemonCatalogue>(this.allPokemons + limit + this.offSetString + offset);   
     }catch (e){
       console.log(e);
       return e;

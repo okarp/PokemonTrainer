@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ability, Move, Pokemon, Stat, Type} from 'src/interfaces';
+import { Pokemon} from 'src/interfaces';
 import { PokemonapifetcherService } from '../pokemonapifetcher.service';
 import { ActivatedRoute } from '@angular/router';
 
