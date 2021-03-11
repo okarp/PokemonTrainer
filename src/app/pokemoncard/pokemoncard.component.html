@@ -1,19 +1,19 @@
-<div class="flex"> 
+<div class="flex" *ngIf="loaded"> 
   
 
     <div class="pokemonBase">
     <div class="pokemonName">
-      {{name}}
+      {{pokemon.name}}
     </div>
-    <div class="pokemonTypes" *ngFor="let type of types">{{type.type.name}} </div>
+    <div class="pokemonTypes" *ngFor="let type of pokemon.types">{{type.type.name}} </div>
     <div class="pokemonPicture">
-      <img src="{{pic}}" alt="Picture of {{name}} pokemon" width="250">  
+      <img src="{{pokemon.sprites.front_default}}" alt="Picture of {{pokemon.name}} pokemon" width="250">  
     </div>
     </div>  
 
   <div class="statsProfileWrap">
   <div class ="pokemonStats">    
-    <div *ngFor="let stat of baseStats" >            
+    <div *ngFor="let stat of pokemon.stats" >            
       {{stat.stat.name}}: {{stat.base_stat}} 
     </div> 
   </div>
@@ -21,19 +21,19 @@
 
 
   <div class="pokemonProfile">
-    {{name}} abilities
-    <div class="pokemonAbilities" *ngFor="let ability of abilities">{{ability.ability.name}}</div>
-    <div>Height: {{height}} ft</div>
-    <div>Weight: {{weight}} lbs</div>
-    <div>Base experience: {{baseExp}} xp</div>
+    {{pokemon.name}} abilities
+    <div class="pokemonAbilities" *ngFor="let ability of pokemon.abilities">{{ability.ability.name}}</div>
+    <div>Height: {{pokemon.height}} ft</div>
+    <div>Weight: {{pokemon.weight}} lbs</div>
+    <div>Base experience: {{pokemon.base_experience}} xp</div>
   </div>
 
 </div>
 
 
   <div>
-    <h2>List of the moves {{name}} knows</h2>
-  <div *ngFor="let move of moves" class="pokemonMoves">
+    <h2>List of the moves {{pokemon.name}} knows</h2>
+  <div *ngFor="let move of pokemon.moves" class="pokemonMoves">
     {{move.move.name}}
   </div>
   </div>

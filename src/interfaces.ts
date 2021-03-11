@@ -78,7 +78,7 @@ export interface Type {
     type: Type2;
 }
 
-export interface PokemonCard {
+export interface Pokemon {
     abilities: Ability[];
     base_experience: number;
     forms: Form[];

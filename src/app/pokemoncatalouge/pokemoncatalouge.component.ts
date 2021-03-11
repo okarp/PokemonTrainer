@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonCard, PokemonCatalogue } from 'src/interfaces';
+import { Pokemon, PokemonCatalogue } from 'src/interfaces';
 import { PokemonapifetcherService } from '../pokemonapifetcher.service';
 
 @Component({
@@ -11,10 +11,10 @@ import { PokemonapifetcherService } from '../pokemonapifetcher.service';
 export class PokemoncatalougeComponent implements OnInit {
 
   constructor(private apiFetcher: PokemonapifetcherService) { }
-  pokemons : any[] = [];
-  pokemonCards: PokemonCard[] = [];
-  loading: boolean = false;
-  private pokemonLimit: number = 250;
+  pokemonCatalouge : any[] = [];
+  pokemons: Pokemon[] = [];
+  loading: boolean = true;
+  private pokemonLimit: number = 151;
   
 
   ngOnInit() { 
@@ -22,23 +22,20 @@ export class PokemoncatalougeComponent implements OnInit {
   }
 
   getSinglePokemon(url: string){
-    this.apiFetcher.fetchApi(url).subscribe((data: PokemonCard)=>{      
-    this.pokemonCards.push(data);     
+    this.apiFetcher.fetchApi(url).subscribe((data: Pokemon)=>{      
+    this.pokemons.push(data);
+    if (this.pokemons.length > this.pokemonLimit * 0.9)
+      this.loading = false;    
     })
   }
 
 
 getPokemons(limit: number){  
-  this.apiFetcher.getAllPokemons(limit).subscribe((data: PokemonCatalogue)=>{      
-      this.pokemons = data.results;     
-      this.pokemons.forEach(element => {            
+  this.apiFetcher.getAllPokemons(limit).subscribe((data: PokemonCatalogue)=>{           
+      this.pokemonCatalouge = data.results;     
+      this.pokemonCatalouge.forEach(element => {            
           this.getSinglePokemon(element.url);                                          
         })                  
-      })                    
-    }
-    
-    pokemonNotFoundHandler(reduce: number) {      
-      console.log(reduce);
-    }
-  } 
-
+      })                        
+  }
+}
