@@ -1,0 +1,15 @@
+.header {	    
+	
+    text-align: center;
+    font-family: 'pokemonSolid';    
+    letter-spacing: 10px;    
+    margin-bottom: 5rem; 
+    background-image: linear-gradient(to bottom right, rgb(61, 125, 202), rgb(0, 58, 112));
+    padding: 2rem;   
+}
+
+h1 {
+    margin: 0;
+    font-size: 72px;
+    color: #FFDE00; 
+  }

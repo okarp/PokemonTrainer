@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: pokemonSolid;
+    src: url(assets/fonts/PokemonSolid.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: pokemonHollow;
+    src: url(assets/fonts/PokemonHollow.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: berlinSans;
+    src: url(assets/fonts/BerlinSansFBRegular.ttf) format("opentype");
+  }
+
+html, body { height: 100%; }
+body { 
+    margin: 0;
+     font-family: Roboto, "Helvetica Neue", sans-serif;  
+     background-image: linear-gradient(to bottom right, rgb(61, 125, 202), rgb(0, 58, 112));
+     height: 100%;
+     margin: 0;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+ 
+
+ }

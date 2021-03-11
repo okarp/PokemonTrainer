@@ -1,0 +1,14 @@
+<div class="loading" *ngIf="loading">
+    <mat-spinner></mat-spinner></div>
+
+<div class="maingrid" *ngIf="!loading">
+       
+    <div class="box" *ngFor="let pokemon of pokemonCards">
+        <mat-card class="pokemon-card" routerLink="/pokemon/{{pokemon.name}}">                
+            <mat-card-title>{{pokemon.name}}</mat-card-title>             
+            <img mat-card-image src="{{pokemon.sprites.front_default}}" alt="Picture of {{pokemon.name}} pokemon">  
+            <div class="pokemonTypes" *ngFor="let type of pokemon.types">{{type.type.name}}</div>       
+        </mat-card>
+    </div>
+
+</div>

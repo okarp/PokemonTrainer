@@ -1,0 +1,67 @@
+.flex{    
+    background-color: rgb(255, 158, 158);
+    position:absolute;
+    left: 50%;    
+    margin: auto;
+    transform: translate(-50%, 0%); 
+    width: 60%;    
+    background-image: linear-gradient(to bottom right, rgb(61, 125, 202), rgb(0, 58, 112)); 
+    font-family: 'berlinSans';
+    text-align: center;
+    color:#FFDE00;    
+    font-weight: 800;
+    font-variant: small-caps; 
+    text-transform: uppercase; 
+    font-size: 1.2rem;         
+}
+
+
+
+.pokemonPicture{
+    margin-top: -3rem;
+    margin-bottom: -3rem;
+}
+.pokemonTypes{
+    display: inline;
+    width: 100%;   
+    font-size: 1.2rem;       
+}
+
+.pokemonMoves{ 
+    display: inline-flex;           
+    padding: 15px;
+    font-size: 1.2rem;  
+    text-align: left;     
+    justify-content: center;        
+        
+}
+
+.pokemonName{
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.statsProfileWrap{
+    display: flex;
+    text-align: left;     
+    justify-content: center;      
+    flex-wrap: nowrap;
+    width: 100%;    
+        
+    
+}
+
+.pokemonProfile{
+    
+    padding: 2rem; 
+}
+
+.pokemonStats{   
+        
+    padding: 2rem;    
+}
+h2{      
+    font-size: 2rem;   
+    
+}
+

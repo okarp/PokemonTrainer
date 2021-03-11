@@ -1,7 +1,33 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { PokemoncardComponent } from './pokemoncard/pokemoncard.component';
+import { PokemoncatalougeComponent } from './pokemoncatalouge/pokemoncatalouge.component';
+import { PokemontrainerComponent } from './pokemontrainer/pokemontrainer.component';
+//import components and tie them to a path
+//login / pokemons / pokmeon{id} / userpage
+const routes: Routes = [{
+  path: '',
+  pathMatch: 'full',
+  component: LandingpageComponent
+  },
+  {
 
-const routes: Routes = [];
+  path: 'pokemon/:id',
+  pathMatch: 'full',
+  component: PokemoncardComponent
+  },
+  {
+    path:'trainer',
+    pathMatch: 'full',
+    component: PokemontrainerComponent
+  },
+  {
+    path:'catalouge',
+    pathMatch: 'full',
+    component: PokemoncatalougeComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,12 @@
+<form (ngSubmit)="handleFormSubmit()">
+    <label for="userName">Username</label>
+    <input type="text" 
+    [(ngModel)]="userName"
+    placeholder="username"
+    id ="userName"
+    name="userName">
+    <button type="submit" value ="Submit">Create user</button>
+</form>
+
+<h1>{{userName}}</h1>
+    
