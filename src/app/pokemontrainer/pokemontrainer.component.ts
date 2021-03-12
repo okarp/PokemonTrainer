@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/interfaces';
-import { PokemonapifetcherService } from '../pokemonapifetcher.service';
+import { ApiService} from '../api.service';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-pokemontrainer',
@@ -9,21 +10,23 @@ import { PokemonapifetcherService } from '../pokemonapifetcher.service';
 })
 export class PokemontrainerComponent implements OnInit {
 
+  
   pokemons: Pokemon[] = []
-  trainerPokemons: string[] = []
+  private trainerPokemons: string[] = []
   trainerName: string = ''
 
-  constructor(private readonly apiFetcher: PokemonapifetcherService) { }
+  constructor(private readonly apiFetcher: ApiService, private readonly storage: StorageService) { }
 
+  //on init get trainers name and collected pokemons
   ngOnInit(): void {
-    this.trainerPokemons = JSON.parse(localStorage.getItem("pokemons")!);
-    this.trainerName = localStorage.getItem("trainer")!;
+    this.trainerPokemons = this.storage.getPokemons();
+    this.trainerName = this.storage.getUser();
     this.getPokemons();
   }
-
+  //request data for the collected pokemons
   getPokemons(){
     this.trainerPokemons.forEach(element => {
-      this.apiFetcher.fetchApi(element).subscribe((data: Pokemon)=>{      
+      this.apiFetcher.getPokemon(element).subscribe((data: Pokemon)=>{      
         this.pokemons.push(data);        
         })
       });

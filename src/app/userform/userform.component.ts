@@ -11,6 +11,7 @@ export class UserformComponent implements OnInit {
 
   public userName: string = ''; 
    
+  //add user to storage and redirect to pokemon catalouge
   handleFormSubmit(): void{    
     this.storage.addUser(this.userName);
     var pokeArr : string[] = []
@@ -19,7 +20,7 @@ export class UserformComponent implements OnInit {
   };
 
   constructor(private router: Router, private storage: StorageService) { }
-
+  //on init check if a user has been created, redirect if yes.
   ngOnInit(): void {
     if (this.storage.getUser()!= null)
       this.router.navigate(['catalouge'])

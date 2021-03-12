@@ -20,13 +20,15 @@ export class CacheService {
 
   constructor() {     
     this.map = new Map();
+    //call lifecycle hook on refresh to clear cache 
+    //done so no extra cache builds up
     window.onbeforeunload = () => this.ngOnDestroy();   
   }
   ngOnInit(){     
   }
   
+  //clear data from the map (cache)
   ngOnDestroy() {
-    console.log("clearing cache")  
-   this.map.clear;
+    this.map.clear;
   }
 }

@@ -26,7 +26,7 @@ export class StorageService {
   }
 
   getUser(){
-    return this.localStorage.getItem("trainer");
+    return this.localStorage.getItem("trainer")!;
   }
 
   set(key:string, value:string){
@@ -35,6 +35,10 @@ export class StorageService {
 
   get(key:string){
     return this.localStorage.getItem(key);
+  }
+
+  getPokemons(){
+    return JSON.parse(this.localStorage.getItem("pokemons")!);
   }
 
   containsPokemon(name:string){

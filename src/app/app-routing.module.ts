@@ -4,8 +4,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { PokemoncardComponent } from './pokemoncard/pokemoncard.component';
 import { PokemoncatalougeComponent } from './pokemoncatalouge/pokemoncatalouge.component';
 import { PokemontrainerComponent } from './pokemontrainer/pokemontrainer.component';
-//import components and tie them to a path
-//login / pokemons / pokmeon{id} / userpage
+
 const routes: Routes = [{
   path: '',
   pathMatch: 'full',
