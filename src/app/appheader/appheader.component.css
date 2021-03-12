@@ -12,6 +12,7 @@
     font-family: 'berlinSans';
     display: flex;
     flex-direction: column;
+    text-decoration: none;
     
 }
 

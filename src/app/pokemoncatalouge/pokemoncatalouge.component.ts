@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon, PokemonCatalogue, Result } from 'src/interfaces';
 import { PokemonapifetcherService } from '../pokemonapifetcher.service';
 import {MatPaginatorIntl, PageEvent} from '@angular/material/paginator';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-pokemoncatalouge',
@@ -11,7 +12,9 @@ import {MatPaginatorIntl, PageEvent} from '@angular/material/paginator';
 
 export class PokemoncatalougeComponent implements OnInit {
 
-  constructor(private apiFetcher: PokemonapifetcherService, private paginator: MatPaginatorIntl) { }
+  constructor(private apiFetcher: PokemonapifetcherService, private paginator: MatPaginatorIntl,
+              private storage: StorageService) { }
+
   pokemonCatalouge : Result[] = [];
   pokemons: Pokemon[] = [];
   loading: boolean = true;
@@ -31,19 +34,18 @@ export class PokemoncatalougeComponent implements OnInit {
     this.offset = this.pageIndex * this.pageSize;
     this.pokemonLimit = this.pageSize;       
     this.getPokemons(this.pageSize, this.offset);
-    localStorage.setItem("pagesize", this.pageSize.toString());
-    localStorage.setItem("pageindex", this.pageIndex.toString());
-    localStorage.setItem("offset", this.offset.toString());
+    this.storage.set("pagesize", this.pageSize.toString());
+    this.storage.set("pageindex", this.pageIndex.toString());
+    this.storage.set("offset", this.offset.toString());
   }
 
 
   ngOnInit() { 
-    if (localStorage.getItem("pagesize") != null){
-      let pagesize = localStorage.getItem("pagesize");
-      let pageindex = localStorage.getItem("pageindex");
-      let offset = localStorage.getItem("offset");
-      if (pagesize != null && pageindex != null && offset != null){
-        console.log(pagesize)
+    if (this.storage.get("pagesize") != null){
+      let pagesize = this.storage.get("pagesize");
+      let pageindex = this.storage.get("pageindex");
+      let offset = this.storage.get("offset");  
+      if (pagesize != null && pageindex != null && offset != null){        
         this.pageSize = parseInt(pagesize);
         this.offset = parseInt(offset);
         this.pageIndex = parseInt(pageindex);

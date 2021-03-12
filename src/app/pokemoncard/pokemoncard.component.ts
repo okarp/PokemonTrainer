@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon} from 'src/interfaces';
 import { PokemonapifetcherService } from '../pokemonapifetcher.service';
 import { ActivatedRoute } from '@angular/router';
+import { StorageService } from '../storage.service';
 
 
 
@@ -20,7 +21,8 @@ export class PokemoncardComponent implements OnInit {
   caught: boolean = false;
 
 
-  constructor(private apiFetcher: PokemonapifetcherService, private route: ActivatedRoute) { }
+  constructor(private apiFetcher: PokemonapifetcherService, private route: ActivatedRoute,
+              private storage: StorageService) { }
 
 
   ngOnInit() {         
@@ -35,9 +37,7 @@ export class PokemoncardComponent implements OnInit {
 
   catchPokemon(){
     if (!this.alreadyCaught){
-      var pokeArr: string[] = JSON.parse(localStorage.getItem("pokemons")!);    
-      pokeArr.push(this.pokemon.name);    
-      localStorage.setItem("pokemons", JSON.stringify(pokeArr));    
+      this.storage.addToPokemonArray(this.pokemon.name)    
       this.imageSource = 'assets/images/pokeball.gif'
       this.caught = true;    
       setTimeout( ()=>{
@@ -49,9 +49,6 @@ export class PokemoncardComponent implements OnInit {
   }
 
   checkIsCaught(){
-    var pokeArr: number[] = JSON.parse(localStorage.getItem("pokemons")!);
-    if (pokeArr.includes(this.pokemon.id)){
-      this.alreadyCaught = true;
-    }
+      this.alreadyCaught = this.storage.containsPokemon(this.pokemon.name);    
   }
 }

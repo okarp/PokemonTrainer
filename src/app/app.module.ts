@@ -14,6 +14,7 @@ import { MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AppheaderComponent } from './appheader/appheader.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { PokemonsComponent } from './pokemons/pokemons.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     PokemontrainerComponent,
     PokemoncatalougeComponent,
     PokemoncardComponent,
-    AppheaderComponent
+    AppheaderComponent,    
+    PokemonsComponent
     
   ],
   imports: [
