@@ -10,7 +10,5 @@ export class LandingpageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    localStorage.setItem('user', "pokemon trainer");
-    console.log(localStorage.getItem('user'));
-    }
+  }
 }

@@ -12,7 +12,7 @@ export class UserformComponent implements OnInit {
    
   handleFormSubmit(): void{    
     localStorage.setItem("trainer", this.userName);
-    var pokeArr : number[] = []
+    var pokeArr : string[] = []
     localStorage.setItem("pokemons", JSON.stringify(pokeArr));
     console.log(localStorage.getItem("trainer"));
     this.router.navigate(['catalouge'])

@@ -35,8 +35,8 @@ export class PokemoncardComponent implements OnInit {
 
   catchPokemon(){
     if (!this.alreadyCaught){
-      var pokeArr: number[] = JSON.parse(localStorage.getItem("pokemons")!);    
-      pokeArr.push(this.pokemon.id);    
+      var pokeArr: string[] = JSON.parse(localStorage.getItem("pokemons")!);    
+      pokeArr.push(this.pokemon.name);    
       localStorage.setItem("pokemons", JSON.stringify(pokeArr));    
       this.imageSource = 'assets/images/pokeball.gif'
       this.caught = true;    
