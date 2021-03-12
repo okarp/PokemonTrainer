@@ -7,13 +7,21 @@
     padding: 2rem;   
 }
 
-.links{
-    font-size: 1rem;
+
+
+a[ng-reflect-router-link] {
+    font-size: 1.2rem;
     font-family: 'berlinSans';
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    
+    color: rgb(240, 69, 69);
+    padding-bottom: 1.5rem;
+}
+
+a[ng-reflect-router-link]:hover {
+    transform:scale(1.1);
+ 
 }
 
 h1 {
