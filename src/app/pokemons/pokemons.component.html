@@ -1,1 +1,10 @@
-<p>pokemons works!</p>
+<div class = "pokemongrid">
+    <div class="box" *ngFor="let pokemon of pokemonArray">
+    <mat-card class="pokemon-card" routerLink="/pokemon/{{pokemon.name}}">                
+        <mat-card-title>{{pokemon.name}}</mat-card-title>             
+        <img mat-card-image src="{{pokemon.sprites.front_default}}" alt="Picture of {{pokemon.name}} pokemon">  
+        <div class="pokemonTypes" *ngFor="let type of pokemon.types">{{type.type.name}}</div>       
+    </mat-card>
+    </div>
+</div>
+

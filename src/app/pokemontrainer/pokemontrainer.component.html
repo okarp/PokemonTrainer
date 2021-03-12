@@ -1,10 +1,2 @@
 <div class="trainer"><h2>Hello {{trainerName}}! Have a look at your pokemon collection!</h2></div>
-<div class=maingrid>
-<div class="box" *ngFor="let pokemon of pokemons">
-    <mat-card class="pokemon-card" routerLink="/pokemon/{{pokemon.name}}">                
-        <mat-card-title>{{pokemon.name}}</mat-card-title>             
-        <img mat-card-image src="{{pokemon.sprites.front_default}}" alt="Picture of {{pokemon.name}} pokemon">  
-        <div class="pokemonTypes" *ngFor="let type of pokemon.types">{{type.type.name}}</div>       
-    </mat-card>
-</div>
-</div>
+<app-pokemons [pokemonArray] ="pokemons"></app-pokemons>

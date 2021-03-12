@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/interfaces';
 
 @Component({
@@ -7,8 +7,8 @@ import { Pokemon } from 'src/interfaces';
   styleUrls: ['./pokemons.component.css']
 })
 export class PokemonsComponent implements OnInit {
-
-  pokemons: Pokemon[] = []
+  @Input() pokemonArray : Pokemon[] = [];
+    
   constructor() { }
 
   ngOnInit(): void {

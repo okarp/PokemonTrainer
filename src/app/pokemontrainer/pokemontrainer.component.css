@@ -1,20 +1,4 @@
-.maingrid{
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 3.5rem;
-    padding-bottom: 5rem;   
-}
-
-
-
-.pokemon-card{   
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(to bottom right, rgb(61, 125, 202), rgb(0, 58, 112));    
-}
-
-mat-card-title, .pokemonTypes, .trainer{
+.trainer{
     font-family: 'berlinSans';
     text-align: center;
     color:#FFDE00;
@@ -22,23 +6,3 @@ mat-card-title, .pokemonTypes, .trainer{
     font-weight: 800;
     text-transform: uppercase;            
 }
-
-.box:hover .pokemon-card{
-    background-image: linear-gradient(to bottom right, rgb(61, 125, 202), rgb(255, 255, 255));
-    transform: translate(0, -1rem);
-}
-
-@media (min-width: 400px) {
-    .maingrid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-@media (min-width: 700px) {
-    .maingrid { grid-template-columns: repeat(3, 1fr); }
-  }
-
-  @media (min-width: 900px) {
-    .maingrid { grid-template-columns: repeat(5, 1fr); }
-  }
-
-
-
