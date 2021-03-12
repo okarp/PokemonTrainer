@@ -16,14 +16,14 @@ export class PokemonapifetcherService {
   private singlePokemon: string =  "https://pokeapi.co/api/v2/pokemon/"
 
   public getAllPokemons(limit: number, offset: number): Observable<PokemonCatalogue>{ 
-    if (this.cache.mapContains(this.allPokemons + limit + this.offSetString + offset)){
+    if (this.cache.contains(this.allPokemons + limit + this.offSetString + offset)){
       console.log("cache hit")
-      return this.cache.getFromMap(this.allPokemons + limit + this.offSetString + offset);
+      return this.cache.get(this.allPokemons + limit + this.offSetString + offset);
 
     }    
     try{
       var response = this.HTTP.get<PokemonCatalogue>(this.allPokemons + limit + this.offSetString + offset);
-      this.cache.addToMap(this.allPokemons + limit + this.offSetString + offset, response);
+      this.cache.add(this.allPokemons + limit + this.offSetString + offset, response);
       return response;  
     }catch (e){
       console.log(e);
@@ -31,13 +31,13 @@ export class PokemonapifetcherService {
     }    
   }
   public fetchApi(pokemonName: string){ 
-    if (this.cache.mapContains(this.singlePokemon + pokemonName)){
+    if (this.cache.contains(this.singlePokemon + pokemonName)){
       console.log("cached result");
-      return this.cache.getFromMap(this.singlePokemon + pokemonName);      
+      return this.cache.get(this.singlePokemon + pokemonName);      
     } 
     try{ 
       var response = this.HTTP.get(this.singlePokemon + pokemonName);
-      this.cache.addToMap(this.singlePokemon + pokemonName, response);
+      this.cache.add(this.singlePokemon + pokemonName, response);
       return response;       
     }catch (e){
       console.log(e);

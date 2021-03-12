@@ -4,24 +4,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CacheService {
-  private map = new Map();
+  private map: Map<any,any>;
 
-  addToMap(key:any, value:any){
+  add(key:any, value:any){
     this.map.set(key, value);
   }
 
-  mapContains(key:any):boolean{
+  contains(key:any):boolean{
     return this.map.has(key)
   }
 
-  getFromMap(key:any){
+  get(key:any){
     return this.map.get(key);
   }
 
   constructor() {     
+    this.map = new Map();
     window.onbeforeunload = () => this.ngOnDestroy();   
   }
-  ngOnInit(){ 
+  ngOnInit(){     
   }
   
   ngOnDestroy() {
