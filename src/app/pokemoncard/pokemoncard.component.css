@@ -15,8 +15,12 @@
     font-size: 1.2rem;         
 }
 
-.caughtText{
-    
+.pokemonCaught{
+    padding-top: 2rem;
+}
+
+img:hover{        
+    transform: translate(0, -1rem);   
 }
 
 .pokemonPicture{

@@ -6,12 +6,15 @@
   
 
     <div class="pokemonBase">
+    <div class="pokemonCaught" *ngIf="alreadyCaught">You have this pokemon in your collection, nice!</div>
+    <div class="pokemonNotCaught" *ngIf="!alreadyCaught">Tip! Click on {{pokemon.name}}s picture to catch it.</div>
     <div class="pokemonName">
       {{pokemon.name}}
     </div>
     <div class="pokemonTypes" *ngFor="let type of pokemon.types">{{type.type.name}} </div>
     <div class="pokemonPicture">
-      <img [src]="imageSource" alt="Picture of {{pokemon.name}} pokemon" width="250"  (click)="catchPokemon()">
+      <img [src]="imageSource"      
+      alt="Picture of {{pokemon.name}} pokemon" width="250"  (click)="catchPokemon()">
       <div class="caughtText" *ngIf="caught"><h3>You caught {{pokemon.name}}, very cool!</h3></div>  
     </div>
     </div>  
