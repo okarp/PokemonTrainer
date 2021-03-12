@@ -18,8 +18,8 @@ export class PokemoncardComponent implements OnInit {
   constructor(private apiFetcher: PokemonapifetcherService, private route: ActivatedRoute) { }
 
 
-  ngOnInit() {    
-      this.apiFetcher.fetchApi("https://pokeapi.co/api/v2/pokemon/" + this.route.snapshot.paramMap.get('id')).subscribe((data: Pokemon)=>{      
+  ngOnInit() {         
+      this.apiFetcher.fetchApi(this.route.snapshot.paramMap.get('id')!).subscribe((data: Pokemon)=>{      
       this.pokemon = data;      
       this.loaded = true;        
     })  

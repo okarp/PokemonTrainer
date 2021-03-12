@@ -18,15 +18,14 @@ export class CacheService {
     return this.map.get(key);
   }
 
-  constructor() { 
-    console.log("created")   
+  constructor() {     
     window.onbeforeunload = () => this.ngOnDestroy();   
   }
   ngOnInit(){ 
   }
   
   ngOnDestroy() {
-  console.log('Service destroy')  
+    console.log("clearing cache")  
    this.map.clear;
   }
 }

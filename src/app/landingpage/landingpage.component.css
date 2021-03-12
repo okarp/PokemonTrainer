@@ -1,0 +1,22 @@
+.flex{
+    position:absolute;
+    left: 50%;    
+    margin: auto;
+    transform: translate(-50%, 0%); 
+    width: 60%;   
+    height: 50%;      
+    font-family: 'berlinSans';
+    text-align: center;
+    color:#FFDE00;    
+    font-weight: 800;
+    font-variant: small-caps; 
+    text-transform: uppercase; 
+    font-size: 1.4rem;
+}
+h1{ 
+
+}
+
+.form{
+  
+}

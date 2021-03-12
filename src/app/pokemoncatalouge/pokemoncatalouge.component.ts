@@ -17,14 +17,12 @@ export class PokemoncatalougeComponent implements OnInit {
   loading: boolean = true;
   private pokemonLimit: number = 10;
   private offset: number = 0;
-  reload: boolean = false;
 
   length = 898;
   pageSize = 10;
   pageIndex = 0;
   pageSizeOptions = [5, 10, 25];
   showFirstLastButtons = true;
-  
 
   handlePageEvent(event: PageEvent) {    
     this.length = event.length;    
@@ -59,7 +57,7 @@ export class PokemoncatalougeComponent implements OnInit {
 
   getSinglePokemon(url: string){    
     this.apiFetcher.fetchApi(url).subscribe((data: Pokemon)=>{      
-    this.pokemons.push(data);
+    this.pokemons.push(data);    
     if (this.pokemons.length == this.pokemonLimit)
       this.loading = false;    
     })
@@ -73,7 +71,7 @@ getPokemons(limit: number, offset:number){
   this.apiFetcher.getAllPokemons(limit, offset).subscribe((data: PokemonCatalogue)=>{           
       this.pokemonCatalouge = data.results;     
       this.pokemonCatalouge.forEach(element => {            
-          this.getSinglePokemon(element.url);                                          
+          this.getSinglePokemon(element.name);                                          
         })                  
       })                        
   }
