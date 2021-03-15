@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
-import { NotfoudcomponentComponent } from './components/notfound/notfoudcomponent/notfoudcomponent.component';
+import { NotfoudcomponentComponent } from './components/notfound/notfoudcomponent.component';
 import { PokemoncardComponent } from './components/pokemoncard/pokemoncard.component';
 import { PokemoncatalougeComponent } from './components/pokemoncatalouge/pokemoncatalouge.component';
 import { PokemontrainerComponent } from './components/pokemontrainer/pokemontrainer.component';
