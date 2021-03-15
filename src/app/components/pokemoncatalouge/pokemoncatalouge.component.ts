@@ -80,7 +80,7 @@ export class PokemoncatalougeComponent implements OnInit {
       }))
     .subscribe((data: PokemonCatalogue)=>{           
         this.pokemonCatalouge = data.results;                          
-              })                 
+       })                 
     }
 
   //get a single pokemon from api and push it to pokemons array
@@ -99,10 +99,6 @@ export class PokemoncatalougeComponent implements OnInit {
        })        
        ).subscribe((data: Pokemon)=>{                  
     this.pokemons.push(data);   
-    })
-    catchError((error: Error) =>{
-      console.log("asddddddd" + error);
-      return of(null); 
-    }); 
+    })    
   }
 }
