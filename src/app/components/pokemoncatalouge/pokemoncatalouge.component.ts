@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon, PokemonCatalogue, Result } from 'src/app/interfaces/interfaces';
-import { ApiService } from '../services/api.service';
+import { Pokemon, PokemonCatalogue, Result } from 'src/app/services/interfaces/interfaces';
+import { ApiService } from '../../services/api.service';
 import {MatPaginatorIntl, PageEvent} from '@angular/material/paginator';
-import { StorageService } from '../services/storage.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-pokemoncatalouge',

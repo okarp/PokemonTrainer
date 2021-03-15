@@ -1,9 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { PokemoncardComponent } from './pokemoncard/pokemoncard.component';
-import { PokemoncatalougeComponent } from './pokemoncatalouge/pokemoncatalouge.component';
-import { PokemontrainerComponent } from './pokemontrainer/pokemontrainer.component';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { PokemoncardComponent } from './components/pokemoncard/pokemoncard.component';
+import { PokemoncatalougeComponent } from './components/pokemoncatalouge/pokemoncatalouge.component';
+import { PokemontrainerComponent } from './components/pokemontrainer/pokemontrainer.component';
 
 const routes: Routes = [{
   path: '',

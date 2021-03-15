@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon} from 'src/app/interfaces/interfaces';
-import { ApiService } from '../services/api.service';
+import { Pokemon} from 'src/app/services/interfaces/interfaces';
+import { ApiService } from '../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { StorageService } from '../services/storage.service';
+import { StorageService } from '../../services/storage.service';
 
 
 

@@ -4,17 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { UserformComponent } from './userform/userform.component';
-import { PokemontrainerComponent } from './pokemontrainer/pokemontrainer.component';
-import { PokemoncatalougeComponent } from './pokemoncatalouge/pokemoncatalouge.component';
-import { PokemoncardComponent } from './pokemoncard/pokemoncard.component';
+import { PokemontrainerComponent } from './components/pokemontrainer/pokemontrainer.component';
+import { PokemoncatalougeComponent } from './components/pokemoncatalouge/pokemoncatalouge.component';
+import { PokemoncardComponent } from './components/pokemoncard/pokemoncard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';  
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { AppheaderComponent } from './appheader/appheader.component';
+import { AppheaderComponent } from './components/appheader/appheader.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { PokemonsComponent } from './pokemons/pokemons.component';
+import { PokemonsComponent } from './components/pokemons/pokemons.component';
 
 
 @NgModule({
