@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/interfaces';
-import { ApiService} from '../api.service';
-import { StorageService } from '../storage.service';
+import { Pokemon } from 'src/app/interfaces/interfaces';
+import { ApiService} from '../services/api.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-pokemontrainer',
