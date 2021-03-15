@@ -1,7 +1,7 @@
 # Pokemontrainer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
-
+A live version of this application is hosted in Firebase: https://pokemontrainer-1ad78.web.app/catalouge
 ![alt text](https://i.imgur.com/AbDGUnp.png)
 
 ## Development server
