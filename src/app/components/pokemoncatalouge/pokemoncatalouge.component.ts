@@ -3,7 +3,8 @@ import { Pokemon, PokemonCatalogue, Result } from 'src/app/services/interfaces/i
 import { ApiService } from '../../services/api.service';
 import {MatPaginatorIntl, PageEvent} from '@angular/material/paginator';
 import { StorageService } from '../../services/storage.service';
-
+import { catchError, finalize } from 'rxjs/operators';
+import { empty, Observable, of } from 'rxjs';
 @Component({
   selector: 'app-pokemoncatalouge',
   templateUrl: './pokemoncatalouge.component.html',
@@ -21,6 +22,7 @@ export class PokemoncatalougeComponent implements OnInit {
   loading: boolean = true;
   private pokemonLimit: number = 10;
   private offset: number = 0;
+  private queryLength = 0;
 
   //values for the paginator
   length = 898;
@@ -64,24 +66,43 @@ export class PokemoncatalougeComponent implements OnInit {
 
   //get all pokemons
   getPokemons(limit: number, offset:number){ 
+    this.loading = true; 
     this.pokemonCatalouge = [];
-    this.pokemons = [];
-    this.loading = true;
-    this.apiFetcher.getAllPokemons(limit, offset).subscribe((data: PokemonCatalogue)=>{           
-        this.pokemonCatalouge = data.results;   
-        //for each pokemon get its data  
+    this.pokemons = [];       
+    this.apiFetcher.getAllPokemons(limit, offset)
+    .pipe( 
+      finalize(() => {
+        //when query has finished set queryLenght as the amount of pokemons fetched
         this.pokemonCatalouge.forEach(element => {            
-            this.getSinglePokemon(element.name);                                          
-          })                  
-        })                        
+          this.getSinglePokemon(element.name);
+          this.queryLength = this.pokemonCatalouge.length;                                          
+        })           
+      }))
+    .subscribe((data: PokemonCatalogue)=>{           
+        this.pokemonCatalouge = data.results;                          
+              })                 
     }
 
   //get a single pokemon from api and push it to pokemons array
-  getSinglePokemon(url: string){    
-    this.apiFetcher.getPokemon(url).subscribe((data: Pokemon)=>{      
-    this.pokemons.push(data);    
-    if (this.pokemons.length == this.pokemonLimit)
-      this.loading = false;    
+  //change loading to false when all pokemons have been fetched
+  getSinglePokemon(url: string){       
+    this.apiFetcher.getPokemon(url)
+    .pipe(
+      finalize(() => {        
+        if (this.pokemons.length == this.queryLength)
+          this.loading = false; 
+          //if an error occurs in the get, remove one from queryLength
+          //so loading boolean gets flagged correctly when every pokemon has been fetched         
+       }),catchError(err =>{
+         this.queryLength -= 1;
+         throw err;
+       })        
+       ).subscribe((data: Pokemon)=>{                  
+    this.pokemons.push(data);   
     })
+    catchError((error: Error) =>{
+      console.log("asddddddd" + error);
+      return of(null); 
+    }); 
   }
 }

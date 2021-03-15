@@ -23,7 +23,7 @@ export class ApiService {
     try{
       return this.HTTP.get<PokemonCatalogue>(this.allPokemons + limit + this.offSetString + offset);        
     }catch (e){
-      console.log(e);
+      console.log("error");
       return e;
     }    
   }
@@ -33,7 +33,7 @@ export class ApiService {
     try{ 
       return this.HTTP.get<Pokemon>(this.singlePokemon + pokemonName);     
     }catch (e){
-      console.log(e);
+      console.log("error");
       return e;
     }
   }
