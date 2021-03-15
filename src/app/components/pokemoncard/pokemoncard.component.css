@@ -23,8 +23,12 @@ img:hover{
     transform: translate(0, -1rem);   
 }
 
-.pokemonPicture{
+.loading{  
+    margin-left: auto;
+    margin-right: auto;
+    width: 5%;
 }
+
 .pokemonTypes{
     display: inline;
     width: 100%;   
@@ -50,22 +54,17 @@ img:hover{
     text-align: left;     
     justify-content: center;      
     flex-wrap: nowrap;
-    width: 100%;    
-        
-    
+    width: 100%;       
 }
 
-.pokemonProfile{
-    
+.pokemonProfile{    
     padding: 2rem; 
 }
 
-.pokemonStats{   
-        
+.pokemonStats{           
     padding: 2rem;    
 }
 h2{      
-    font-size: 2rem;   
-    
+    font-size: 2rem;       
 }
 

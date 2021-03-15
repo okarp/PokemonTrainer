@@ -1,0 +1,15 @@
+
+ ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #FFDE00;
+  }
+  
+  ::ng-deep .mat-paginator {
+    background-color:  rgb(61, 125, 202);
+    font-family: 'berlinSans';    
+    color:#FFDE00;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-variant: small-caps; 
+    margin-bottom: 2rem;
+  }

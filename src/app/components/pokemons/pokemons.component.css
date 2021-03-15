@@ -1,10 +1,9 @@
-
 .pokemongrid{
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-gap: 3.5rem;
-    padding-bottom: 5rem;   
+    padding-bottom: 5rem;      
 }
 
 .pokemon-card{   

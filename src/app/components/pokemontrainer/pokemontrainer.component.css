@@ -6,3 +6,15 @@
     font-weight: 800;
     text-transform: uppercase;            
 }
+
+.loading{  
+    margin-left: auto;
+    margin-right: auto;
+    width: 5%;
+}
+
+.pokemonTypes{
+    display: inline;
+    width: 100%;   
+    font-size: 1.2rem;       
+}

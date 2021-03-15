@@ -11,9 +11,10 @@
 
     <div class="loading" *ngIf="loading">
         <mat-spinner></mat-spinner>
-        <h1>Loading pokemons...</h1></div> 
+    </div> 
 
 
 <div *ngIf="!loading">
+    <h2>Click on a pokemon to see more information about it and to catch it</h2>
     <app-pokemons [pokemonArray] ="pokemons"></app-pokemons>
 </div>

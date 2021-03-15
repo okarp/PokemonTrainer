@@ -1,24 +1,3 @@
-.mat-paginator {
-    background-color:  rgb(61, 125, 202);
-    font-family: 'berlinSans';    
-    color:#FFDE00;
-    font-size: 1rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-variant: small-caps; 
-    margin-bottom: 2rem;
-
-  }
-
-  ::ng-deep .mat-paginator .mat-select-value{
-    color:#FFDE00;
-    font-size:1rem;
-    text-align: center;
-    font-family: 'berlinSans';
-  }
-
-
-
 mat-card-title, .pokemonTypes{
     font-family: 'berlinSans';
     text-align: center;
@@ -28,6 +7,17 @@ mat-card-title, .pokemonTypes{
     font-variant: small-caps;          
 }
 
+h2{
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #FFDE00; 
+}
+
+.loading{  
+  margin-left: auto;
+  margin-right: auto;
+  width: 5%;
+}
 
 
 

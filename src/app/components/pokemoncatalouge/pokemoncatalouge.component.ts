@@ -98,7 +98,7 @@ export class PokemoncatalougeComponent implements OnInit {
          throw err;
        })        
        ).subscribe((data: Pokemon)=>{                  
-    this.pokemons.push(data);   
+        this.pokemons.push(data);   
     })    
   }
 }

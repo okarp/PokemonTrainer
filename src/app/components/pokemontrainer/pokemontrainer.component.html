@@ -1,2 +1,7 @@
-<div class="trainer"><h2>Hello {{trainerName}}! Have a look at your pokemon collection!</h2></div>
-<app-pokemons [pokemonArray] ="pokemons"></app-pokemons>
+ <div class="loading" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div> 
+<div class="trainer" *ngIf="!loading"><h3>Hello {{trainerName}}! Have a look at your pokemon collection</h3>
+    <div *ngIf="!hasPokemons"><h5>which seems to be empty.. Navigate to pokemon catalouge to collect some pokemons!</h5></div>
+    <div *ngIf="hasPokemons"><h5>Click on a pokemon card to see more info</h5></div>
+<app-pokemons [pokemonArray] ="pokemons"></app-pokemons></div>

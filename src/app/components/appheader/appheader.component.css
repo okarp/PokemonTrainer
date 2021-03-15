@@ -1,5 +1,4 @@
-.header {	    
-	
+.header {	   
     text-align: center;
     font-family: 'pokemonSolid';    
     letter-spacing: 10px;       
@@ -7,21 +6,17 @@
     padding: 2rem;   
 }
 
-
-
-a[ng-reflect-router-link] {
+.link a{
     font-size: 1.2rem;
-    font-family: 'berlinSans';
-    display: flex;
-    flex-direction: column;
+    font-family: 'berlinSans';   
     text-decoration: none;
     color: rgb(240, 69, 69);
     padding-bottom: 1.5rem;
+    text-decoration: none;
 }
 
-a[ng-reflect-router-link]:hover {
-    transform:scale(1.1);
- 
+.link a:hover{
+    text-transform: uppercase;
 }
 
 h1 {

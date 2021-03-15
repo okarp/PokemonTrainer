@@ -1,13 +1,12 @@
 <div class="loading" *ngIf="!loaded">
-  <mat-spinner></mat-spinner>
-  <h1>Loading pokemon...</h1>
+  <mat-spinner></mat-spinner>  
 </div>
 <div class="flex" *ngIf="loaded"> 
   
 
     <div class="pokemonBase">
     <div class="pokemonCaught" *ngIf="alreadyCaught">You have this pokemon in your collection, nice!</div>
-    <div class="pokemonNotCaught" *ngIf="!alreadyCaught">Tip! Click on {{pokemon.name}} to catch it.</div>
+    <div class="pokemonCaught" *ngIf="!alreadyCaught">Tip! Click on {{pokemon.name}} to catch it.</div>
     <div class="pokemonName">
       {{pokemon.name}}
     </div>

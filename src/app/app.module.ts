@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
-import { UserformComponent } from './userform/userform.component';
+import { UserformComponent } from './components/userform/userform.component';
 import { PokemontrainerComponent } from './components/pokemontrainer/pokemontrainer.component';
 import { PokemoncatalougeComponent } from './components/pokemoncatalouge/pokemoncatalouge.component';
 import { PokemoncardComponent } from './components/pokemoncard/pokemoncard.component';
