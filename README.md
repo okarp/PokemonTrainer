@@ -1,8 +1,23 @@
 # Pokemontrainer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 A live version of this application is hosted in Firebase: https://pokemontrainer-1ad78.web.app/catalouge
-![alt text](https://i.imgur.com/AbDGUnp.png)
+The application ueses open [pokemon api](https://pokeapi.co) to fetch information about pokemons and displaying them to user.
+
+
+User can collect pokemons to his personal collection (stored in local storage) and see more information about each pokemon by clicking the pokemon card in catalouge or in their trainer profile.
+
+## Catalouge view
+![catalouge](https://i.imgur.com/Anx4ItA.png)
+
+## Trainer profile view
+![profile](https://i.imgur.com/Fegs6Sr.png)
+
+## Pokemon information view
+![pokemoninfo](https://i.imgur.com/IVWBGrP.png)
+
+
+
+
 
 ## Development server
 
