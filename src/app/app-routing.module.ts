@@ -1,9 +1,11 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { NotfoudcomponentComponent } from './components/notfound/notfoudcomponent/notfoudcomponent.component';
 import { PokemoncardComponent } from './components/pokemoncard/pokemoncard.component';
 import { PokemoncatalougeComponent } from './components/pokemoncatalouge/pokemoncatalouge.component';
 import { PokemontrainerComponent } from './components/pokemontrainer/pokemontrainer.component';
+import { AuthGuard } from './guards/auth/auth.guard';
 
 const routes: Routes = [{
   path: '',
@@ -14,17 +16,22 @@ const routes: Routes = [{
 
   path: 'pokemon/:id',
   pathMatch: 'full',
-  component: PokemoncardComponent
+  component: PokemoncardComponent,
+  canActivate: [AuthGuard]
   },
   {
-    path:'trainer',
-    pathMatch: 'full',
-    component: PokemontrainerComponent
+    path:'trainer',    
+    component: PokemontrainerComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path:'catalouge',
-    pathMatch: 'full',
-    component: PokemoncatalougeComponent
+    path:'catalouge',    
+    component: PokemoncatalougeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    component: NotfoudcomponentComponent
   }
 ];
 

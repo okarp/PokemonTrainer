@@ -15,6 +15,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AppheaderComponent } from './components/appheader/appheader.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
+import { NotfoudcomponentComponent } from './components/notfound/notfoudcomponent/notfoudcomponent.component';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { PokemonsComponent } from './components/pokemons/pokemons.component';
     PokemoncatalougeComponent,
     PokemoncardComponent,
     AppheaderComponent,    
-    PokemonsComponent
+    PokemonsComponent, NotfoudcomponentComponent
     
   ],
   imports: [
