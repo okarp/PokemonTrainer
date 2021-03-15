@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon, PokemonCatalogue, Result } from 'src/app/services/interfaces/interfaces';
+import { Pokemon, PokemonInfo, Result } from 'src/app/services/interfaces/interfaces';
 import { ApiService } from '../../services/api.service';
 import {MatPaginatorIntl, PageEvent} from '@angular/material/paginator';
 import { StorageService } from '../../services/storage.service';
 import { catchError, finalize } from 'rxjs/operators';
-import { empty, Observable, of } from 'rxjs';
+
 @Component({
   selector: 'app-pokemoncatalouge',
   templateUrl: './pokemoncatalouge.component.html',
@@ -17,7 +17,7 @@ export class PokemoncatalougeComponent implements OnInit {
               private storage: StorageService) { }
 
   
-  pokemonCatalouge : Result[] = [];
+  pokemonResults : Result[] = [];
   pokemons: Pokemon[] = [];
   loading: boolean = true;
   private pokemonLimit: number = 10;
@@ -67,19 +67,19 @@ export class PokemoncatalougeComponent implements OnInit {
   //get all pokemons
   getPokemons(limit: number, offset:number){ 
     this.loading = true; 
-    this.pokemonCatalouge = [];
+    this.pokemonResults = [];
     this.pokemons = [];       
     this.apiFetcher.getAllPokemons(limit, offset)
     .pipe( 
       finalize(() => {
         //when query has finished set queryLenght as the amount of pokemons fetched
-        this.pokemonCatalouge.forEach(element => {            
+        this.pokemonResults.forEach(element => {            
           this.getSinglePokemon(element.name);
-          this.queryLength = this.pokemonCatalouge.length;                                          
+          this.queryLength = this.pokemonResults.length;                                          
         })           
       }))
-    .subscribe((data: PokemonCatalogue)=>{           
-        this.pokemonCatalouge = data.results;                          
+    .subscribe((data: PokemonInfo)=>{           
+        this.pokemonResults = data.results;                          
        })                 
     }
 

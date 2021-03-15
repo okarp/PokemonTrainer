@@ -102,7 +102,7 @@ export interface Result {
     url: string;
 }
 
-export interface PokemonCatalogue {
+export interface PokemonInfo {
     count: number;
     next: string;
     previous: string;

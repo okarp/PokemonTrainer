@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import { Pokemon, PokemonCatalogue } from 'src/app/services/interfaces/interfaces';
+import { Pokemon, PokemonInfo } from 'src/app/services/interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,10 @@ export class ApiService {
   }
 
   //get all pokemons (or rather link to every pokemon) with limit and offset
-  public getAllPokemons(limit: number, offset: number): Observable<PokemonCatalogue>{   
+  public getAllPokemons(limit: number, offset: number): Observable<PokemonInfo>{   
    
     try{
-      return this.HTTP.get<PokemonCatalogue>(this.allPokemons + limit + this.offSetString + offset);        
+      return this.HTTP.get<PokemonInfo>(this.allPokemons + limit + this.offSetString + offset);        
     }catch (e){
       console.log("error");
       return e;
