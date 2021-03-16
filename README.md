@@ -12,11 +12,15 @@ After creating a user you can navigate between the Pokemon catalouge and Trainer
 
 Clicking a Pokemon in Pokemon catalouge or in Trainer page will display more information about the Pokemon. Clicking the image of the Pokemon in the detailed view will 'catch' it and add it to your Trainer collection.
 
-### Development server
+### Running the application locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone the repository followed by `npm install` to install the dependencies in the local node_modules folder.
 
-### Build
+After dependencies have been installed run `ng serve` for a dev server. 
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Building
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
