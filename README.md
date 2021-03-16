@@ -25,7 +25,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-#### Pictures of the application
+### Pictures of the application
+
 ![catalouge](https://i.imgur.com/Anx4ItA.png)
 ![profile](https://i.imgur.com/Fegs6Sr.png)
 ![pokemoninfo](https://i.imgur.com/IVWBGrP.png)
