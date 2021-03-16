@@ -25,7 +25,7 @@ export class PokemoncatalougeComponent implements OnInit {
   private queryLength = 0;
 
   //values for the paginator
-  length = 898;
+  length = 802;
   pageSize = 10;
   pageIndex = 0;
   pageSizeOptions = [5, 10, 25];
